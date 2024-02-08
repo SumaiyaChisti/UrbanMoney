@@ -69,11 +69,6 @@ if(isset($_POST['submit'])) {
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
         
       </div>
     </aside>
@@ -118,8 +113,7 @@ if(isset($_POST['submit'])) {
     <th>Requested Loan Ammount</th>
     <th>Terms In</th>
     <th>Status</th>
-    <th colspan="2">Option</th>
-
+    
     
 </tr>
 
@@ -156,12 +150,7 @@ while($data=mysqli_fetch_assoc($d))
           <td>'.$data['requested_loan_amount'].'</td>
           <td>'.$data['terms_in'].'</td>
           <td>'.$data['status'].'</td>
-          <td><button type="button" onclick="change('.$data["id"].');" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Approve">
-          <i class="fa-solid fa-check"></i>
-</button></td>
-<td><button type="button" onclick="change2('.$data["id"].');" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Reject">
-          <i class="fa-solid fa-xmark"></i>
-</button></td>
+         
           
 
           </tr>';

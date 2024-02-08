@@ -62,11 +62,7 @@ session_start();
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+        
         
       </div>
     </aside>
@@ -85,7 +81,7 @@ session_start();
    <div class="row">
     <?php 
 
-    $d=$conn->query("SELECT * FROM `staff` WHERE `role`='Area Sales Manager' AND `branch_manager` ='$_GET[Branch_Manager]'"); 
+    $d=$conn->query("SELECT * FROM `staff` WHERE `role`='Area Sales Manager' AND `branch_manager` ='$_SESSION[Branch_Manager]'"); 
     while($data=$d->fetch_assoc())  
     echo'<div class="col-2">
     <a href="manager.php?name='.$data["email"].'">

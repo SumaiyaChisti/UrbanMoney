@@ -10,6 +10,32 @@ $d=$conn->query("SELECT * FROM `leads`");
   $d=$conn->query("SELECT * FROM `leads` WHERE `Lead_Status`='Not Interested'");
   $num2=mysqli_num_rows($d);
 
+  $d=$conn->query("SELECT * FROM `form1`");
+  $num3=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form2`");
+  $num4=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form3`");
+  $num5=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form4`");
+  $num6=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form5`");
+  $num7=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form6`");
+  $num8=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form7`");
+  $num9=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form8`");
+  $num10=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form9`");
+  $num11=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form10`");
+  $num12=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form11`");
+  $num13=mysqli_num_rows($d);
+  $d=$conn->query("SELECT * FROM `form12`");
+  $num14=mysqli_num_rows($d);
+ 
+  $num15=$num3+$num4+$num5+$num6+$num7+$num8+$num9+$num10+$num11+$num12+$num13+$num14
 
 
 ?>
@@ -58,11 +84,7 @@ $d=$conn->query("SELECT * FROM `leads`");
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+        
         
       </div>
     </aside>
@@ -117,7 +139,7 @@ $d=$conn->query("SELECT * FROM `leads`");
                 <div class="mdc-card info-card info-card--info">
                   <div class="card-inner">
                     <h5 class="card-title">Forms Submitted</h5>
-                    <h5 class="font-weight-light pb-2 mb-1 border-bottom">₹1,200.00</h5>
+                    <h5 class="font-weight-light pb-2 mb-1 border-bottom"><?php echo $num15;?></h5>
                     <p class="tx-12 text-muted">87% target reached</p>
                     <div class="card-icon-wrapper">
                       <i class="material-icons">credit_card</i>

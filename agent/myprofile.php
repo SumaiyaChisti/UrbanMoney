@@ -2,7 +2,6 @@
 <?php
 session_start();
 include("components/conn.php");
-session_start();
 if(isset($_SESSION['agent'])){
     $Q="SELECT * FROM `staff` WHERE `email`='$_SESSION[agent]'";
     $D=mysqli_query($conn,$Q) ;
@@ -91,11 +90,7 @@ if(isset($_POST['submit']))
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+     
         
       </div>
     </aside>
@@ -159,6 +154,9 @@ if(isset($_POST['submit']))
 
 
 
+    <?php
+      include("components/footer.php");
+      ?>
 
 
 

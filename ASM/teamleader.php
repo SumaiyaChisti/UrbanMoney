@@ -68,12 +68,7 @@ session_start();
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
-        
+      
       </div>
     </aside>
     <!-- partial -->
@@ -90,7 +85,7 @@ session_start();
     <h3 style="font-family: fancy monospace;" >Urban Money Reports &nbsp;&nbsp;&nbsp;&nbsp;
    <div class="row">
     <?php 
-    $d=$conn->query("SELECT * FROM `staff` WHERE `role`='Team Leader' AND `manager` ='$_GET[name]'"); 
+    $d=$conn->query("SELECT * FROM `staff` WHERE `role`='Team Leader' AND `area_sales_manager`= '$_SESSION[Area_Sales_Manager]'"); 
     while($data=$d->fetch_assoc())  
     echo'<div class="col-2">
     <a href="groupteamleader.php?name='.$data["name"].'">

@@ -102,11 +102,7 @@ if(isset($_POST['submit'])) {
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+     
         
       </div>
     </aside>
@@ -179,16 +175,16 @@ while($data=mysqli_fetch_assoc($d))
 
   <label class="form-label" for="formControlLg">Assigned to group team leader</label>
   <select class="form-select" name="group_team_leader" id="">
-  <option value="">Select Option</option>
+  <option value="" name>Select Option</option>
    <?php $t=mysqli_query($conn,"SELECT * FROM `staff` WHERE `role`='Group Team Leader'"); 
     while($tl=mysqli_fetch_assoc($t))
-    echo'<option value="'.$t1['email'].'">'.$tl['name'].'</option>';
+    echo'<option>'.$tl['email'].'</option>';
     ?>
   
 </select>
-
-
   </div>
+
+  
     
     <div class="form-outline mt-4" id="b" >
    <label class="form-label" for="formControlLg">Assigned to team leader</label>
@@ -196,7 +192,7 @@ while($data=mysqli_fetch_assoc($d))
    <option value="">Select Option</option>
      <?php $t=mysqli_query($conn,"SELECT * FROM `staff` WHERE `role`='Team Leader'"); 
       while($tl=mysqli_fetch_assoc($t))
-      echo'<option value="'.$t1['email'].'">'.$tl['name'].'</option>';
+      echo'<option>'.$tl['email'].'</option>';
       ?>
     
   </select>
@@ -210,7 +206,7 @@ while($data=mysqli_fetch_assoc($d))
     <option value="">Select Option</option>
      <?php $t=mysqli_query($conn,"SELECT * FROM `staff` WHERE `role`='Manager'"); 
       while($tl=mysqli_fetch_assoc($t))
-      echo'<option value="'.$t1['email'].'">'.$tl['name'].'</option>';
+      echo'<option>'.$tl['email'].'</option>';
       ?>
     
   </select>
@@ -227,7 +223,7 @@ while($data=mysqli_fetch_assoc($d))
       <option value="">Select Option</option>
      <?php $t=mysqli_query($conn,"SELECT * FROM `staff` WHERE `role`='Area Sales Manager'"); 
       while($tl=mysqli_fetch_assoc($t))
-      echo'<option value="'.$t1['email'].'">'.$tl['name'].'</option>';
+      echo'<option>'.$tl['email'].'</option>';
       ?>
     
   </select>
@@ -240,7 +236,7 @@ while($data=mysqli_fetch_assoc($d))
     <option value="">Select Option</option>
    <?php $t=mysqli_query($conn,"SELECT * FROM `staff` WHERE `role`='Branch Manager'"); 
     while($tl=mysqli_fetch_assoc($t))
-    echo'<option value="'.$t1['email'].'">'.$tl['name'].'</option>';
+    echo'<option>'.$tl['email'].'</option>';
     ?>
   
 </select>
@@ -255,7 +251,7 @@ while($data=mysqli_fetch_assoc($d))
       <option value="">Select Option</option>
      <?php $t=mysqli_query($conn,"SELECT * FROM `staff` WHERE `role`='Zonal Sales Manager'"); 
       while($tl=mysqli_fetch_assoc($t))
-      echo'<option value="'.$t1['email'].'">'.$tl['name'].'</option>';
+      echo'<option>'.$tl['email'].'</option>';
       ?>
     
   </select>
@@ -345,6 +341,15 @@ while($data=mysqli_fetch_assoc($d))
 
     }
     else if(Status=='Zonal Sales Manager')
+    { $("#a").css("display","none");
+      $("#b").css("display","none");
+      $("#c").css("display","none");
+      $("#d").css("display","none");
+      $("#e").css("display","none");
+      $("#f").css("display","none");
+
+    }
+    else if(Status=='dsa')
     { $("#a").css("display","none");
       $("#b").css("display","none");
       $("#c").css("display","none");

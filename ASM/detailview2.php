@@ -104,11 +104,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                    <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p style="padding-top: 30px; padding-left: 50px; " >Pan Card Copy of Company and All Partners</pf>
+                     <h6>Pan Card Copy of Company and All Partners</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-top: 30px; padding-left: 35px; " >Aadhaar Card Of All Partners</p>
+                    <h6 style="padding-left: 13px;">Aadhaar Card Of All Partners</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download" ></i></a>
                       </div>
                    </div>
@@ -117,11 +117,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                   <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p style="padding-top:20px; padding-left: 10px; " >Residential light bill & telephone bill Of All Partners</p>
+                     <h6>Residential light bill & telephone bill Of All Partners</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-top: 20px; padding-left: 13px; " >Office light bill & telephone bill</p>
+                    <h6 style="padding-left: 13px; " >Office light bill & telephone bill</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['office_bill']?>"><i class="fa fa-download" ></i></a>
                       </div>
                    </div>
@@ -130,11 +130,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                      <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p style="padding-top: 30px; padding-left: 15px; " >Partnership deed</p>
+                     <h6>Partnership deed</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['partnership_dead']?>"><i class="fa fa-download" ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-top: 15px; padding-left: 20px; " >Last 12 months GST 3B applicable</p>
+                    <h6 style="padding-left: 13px;">Last 12 months GST 3B applicable</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_3B']?>"><i class="fa fa-download"  ></i></a>
                       </div>
                    </div>
@@ -143,11 +143,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                      <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p>Last 3 years company ITR Financials with Audit Report(CA ATTESTED)</p>
+                     <h6>Last 3 years company ITR Financials with Audit Report(CA ATTESTED)</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['ITRfinancials_AuditReport']?>"><i class="fa fa-download" ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-top: 10px; padding-left: 15px; " >Last 3 Years Indiviual ITR of All Partners</p>
+                    <h6 style="padding-left: 13px;">Last 3 Years Indiviual ITR of All Partners</p>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['ITR_partners']?>"><i class="fa fa-download"></i></a>
                       </div>
                    </div>
@@ -155,11 +155,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                      <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p style=" padding-left: 5px; " >Last 12 Months Company Banking Of All Accounts As Per Balance Sheet</p>
+                     <h6>Last 12 Months Company Banking Of All Accounts As Per Balance Sheet</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['company_banking']?>"><i class="fa fa-download" ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-top: 5px; padding-left: 20px; " >Last 6 Months Indiviual Banking Of All Partners</p>
+                    <h6 style="padding-left: 13px;">Last 6 Months Indiviual Banking Of All Partners</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['individual_banking']?>"><i class="fa fa-download"  ></i></a>
                       </div>
                    </div>
@@ -167,11 +167,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                      <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p style=" padding-left: 5px; " >All OnGoing Loans Sanction Letter And Repayment Track Record </p>
+                     <h6>All OnGoing Loans Sanction Letter And Repayment Track Record </h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['OnGoing_Loans']?>"><i class="fa fa-download" ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-left: 3px;"  >List Of Partners And Share holding Apptern On Company LetterHead</p>
+                    <h6 style="padding-left: 13px;">List Of Partners And Share holding Apptern On Company LetterHead</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['list_of_partners']?>"><i class="fa fa-download"  ></i></a>
                       </div>
                    </div>
@@ -179,11 +179,11 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                      <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <p style="padding-top: 20px; padding-left: 5px; " >Photographs 3-4 Of Each Partner</p>
+                     <h6>Photographs 3-4 Of Each Partner</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download" ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <p style="padding-top: 35px; padding-left: 20px; " >GST Resgistration</p>
+                    <h6 style="padding-left: 13px;">GST Resgistration</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_registration']?>"><i class="fa fa-download"  ></i></a>
                       </div>
                    </div>

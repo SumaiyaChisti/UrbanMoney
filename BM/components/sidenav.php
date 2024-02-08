@@ -27,6 +27,12 @@
               </a>
             </div>
             <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="myprofile.php">
+              <i class="fa-solid fa-user-group"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp;My Profile
+              </a>
+            </div>
+            <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-expansion-panel-link" href="submittedforms.php" data-toggle="expansionPanel" data-target="uio-sub-menu">
               <i class="fa-solid fa-file-contract" style="font-size: 1.1rem;" ></i>
               &nbsp; &nbsp;&nbsp;  Submitted forms

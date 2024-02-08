@@ -90,11 +90,7 @@ if(isset($_POST['submit']))
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+       
         
       </div>
     </aside>
@@ -124,10 +120,11 @@ if(isset($_POST['submit']))
   <input type="tel" value="<?php echo $DATA['contact'];?>" id="formControlLg" name="contact"  class="form-control form-control-lg" required />
   <label class="form-label" for="formControlLg"> Contact</label>
     </div>
-    <div class="form-outline mt-4">
-  <input type="text" value="<?php echo $DATA['team_leader'];?>" id="formControlLg" name="team_leader"  class="form-control form-control-lg" required />
-  <label class="form-label" for="formControlLg"> Team leader</label>
-    </div>
+<?php
+    if($DATA['role']=='Team Leader')
+     {
+      ?>
+
     <div class="form-outline mt-4">
   <input type="text" value="<?php echo $DATA['manager'];?>" id="formControlLg" name="manager"  class="form-control form-control-lg" required />
   <label class="form-label" for="formControlLg"> Manager</label>
@@ -140,11 +137,102 @@ if(isset($_POST['submit']))
   <input type="text" value="<?php echo $DATA['area_sales_manager'];?>" id="formControlLg" name="sales_manager"  class="form-control form-control-lg" required />
   <label class="form-label" for="formControlLg"> Area Sales Manager</label>
     </div>
+    
     <div class="form-outline mt-4">
   <input type="text" value="<?php echo $DATA['zonal_sales_manager'];?>" id="formControlLg" name="zonalsales_manager"  class="form-control form-control-lg" required />
   <label class="form-label" for="formControlLg"> Zonal Sales Manager</label>
 
     </div>
+    <?php }
+    elseif($DATA['role']=='Branch Manager')
+    {?>
+    <div class="form-outline mt-4">
+    <input type="text" value="<?php echo $DATA['zonal_sales_manager'];?>" id="formControlLg" name="zonalsales_manager"  class="form-control form-control-lg" required />
+    <label class="form-label" for="formControlLg"> Zonal Sales Manager</label>
+     </div>
+      <?php }
+      elseif($DATA['role']=='Area Sales Manager')
+      {?>
+        <div class="form-outline mt-4">
+        <input type="text" value="<?php echo $DATA['zonal_sales_manager'];?>" id="formControlLg" name="zonalsales_manager"  class="form-control form-control-lg" required />
+        <label class="form-label" for="formControlLg"> Zonal Sales Manager</label>
+         </div>
+         <div class="form-outline mt-4">
+  <input type="text" value="<?php echo $DATA['branch_manager'];?>" id="formControlLg" name="branch_manager"  class="form-control form-control-lg" required />
+  <label class="form-label" for="formControlLg"> Branch Manager</label>
+    </div>
+    <?php }
+    elseif($DATA['role']=='Manager')
+    {?>
+    <div class="form-outline mt-4">
+  <input type="text" value="<?php echo $DATA['branch_manager'];?>" id="formControlLg" name="branch_manager"  class="form-control form-control-lg" required />
+  <label class="form-label" for="formControlLg"> Branch Manager</label>
+    </div>
+    <div class="form-outline mt-4">
+  <input type="text" value="<?php echo $DATA['area_sales_manager'];?>" id="formControlLg" name="sales_manager"  class="form-control form-control-lg" required />
+  <label class="form-label" for="formControlLg"> Area Sales Manager</label>
+    </div>
+    
+    <div class="form-outline mt-4">
+  <input type="text" value="<?php echo $DATA['zonal_sales_manager'];?>" id="formControlLg" name="zonalsales_manager"  class="form-control form-control-lg" required />
+  <label class="form-label" for="formControlLg"> Zonal Sales Manager</label>
+
+    </div>
+    <?php }
+    elseif($DATA['role']=='Group Team Leader')
+    {?><div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['team_leader'];?>" id="formControlLg" name="team_leader"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Team leader</label>
+        </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['manager'];?>" id="formControlLg" name="manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Manager</label>
+        </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['branch_manager'];?>" id="formControlLg" name="branch_manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Branch Manager</label>
+    </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['area_sales_manager'];?>" id="formControlLg" name="sales_manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Area Sales Manager</label>
+        </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['zonal_sales_manager'];?>" id="formControlLg" name="zonalsales_manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Zonal Sales Manager</label>
+        </div>
+        <?php
+    }elseif($DATA['role']=='Agent')
+    {
+    ?>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['group_team_leader'];?>" id="formControlLg" name="group_team_leader"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg">Group Team leader</label>
+        </div>
+    <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['team_leader'];?>" id="formControlLg" name="team_leader"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Team leader</label>
+        </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['manager'];?>" id="formControlLg" name="manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Manager</label>
+        </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['branch_manager'];?>" id="formControlLg" name="branch_manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Branch Manager</label>
+    </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['area_sales_manager'];?>" id="formControlLg" name="sales_manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Area Sales Manager</label>
+        </div>
+        <div class="form-outline mt-4">
+      <input type="text" value="<?php echo $DATA['zonal_sales_manager'];?>" id="formControlLg" name="zonalsales_manager"  class="form-control form-control-lg" required />
+      <label class="form-label" for="formControlLg"> Zonal Sales Manager</label>
+        </div>
+        <?php
+    }?>
+    
+
+
     <div class="form-outline mt-4">
   <input type="text" value="<?php echo $DATA['campaign'];?>" id="formControlLg" name="campaign"  class="form-control form-control-lg" required />
   <label class="form-label" for="formControlLg"> Campaign</label>

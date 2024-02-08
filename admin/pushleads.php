@@ -12,7 +12,7 @@ if(isset($_POST['addstatusbutton']))
   mysqli_query($conn,"INSERT INTO `lead_attributes` (`name`) VALUES('$_POST[lead_status]')");
   echo"hii";
 }
-
+ 
 
 
 if(isset($_POST['submit'])) 
@@ -125,11 +125,7 @@ error_reporting(0);
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+        
         
       </div>
     </aside>

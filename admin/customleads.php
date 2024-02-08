@@ -64,11 +64,7 @@ session_start();
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+       
         
       </div>
     </aside>
@@ -123,7 +119,7 @@ session_start();
 
 <?php
 include("components/conn.php");
-$q = "SELECT * FROM `leads` WHERE `agent_name`='$_GET[name]'";
+$q = "SELECT * FROM `leads` WHERE `agent_name`='$_GET[email]'";
 $d=mysqli_query($conn, $q);
 $co=mysqli_num_rows($d);
 while($data=mysqli_fetch_assoc($d))

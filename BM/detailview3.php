@@ -106,7 +106,7 @@
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 30px; padding-left: 35px; " >Aadhaar Card</h6>
+                    <h6 style="padding-left: 35px; " >Aadhaar Card</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download" ></i></a>
                       </div>
                    </div>
@@ -119,7 +119,7 @@
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 20px; padding-left: 13px; " >Gomasta License(Renewed)</h6>
+                    <h6 style="padding-left: 13px; " >Gomasta License(Renewed)</h6>
                     <a target="_blank" class="btn" href="../agent/<?php echo $r['license']?>"><i class="fa fa-download" ></i></a>
                       </div>
                    </div>
@@ -128,7 +128,7 @@
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                      <div style="display: flex;" >
                      <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 15px; " >Last 12 Months Service Tax/Sales Tax Receipt/VAT Challans As Applicable</h6>
+                     <h6 style="padding-left: 15px; " >Last 12 Months Service Tax/Sales Tax Receipt/VAT Challans As Applicable</h6>
                      <a target="_blank" class="btn" href="../agent/<?php echo $r['tax_receipt']?>"><i class="fa fa-download" ></i></a>
                     </div>
                     <div class="card" style="width: 160px; height:120px" >

@@ -1,6 +1,7 @@
 
 <?php
 include("components/conn.php");
+session_start();
 // if(isset($_POST['submit'])) {
   
 //     $q = "INSERT INTO `umutility`(`name`)VALUES ('$_POST[name]')";
@@ -66,11 +67,7 @@ include("components/conn.php");
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+       
         
       </div>
     </aside>
@@ -88,11 +85,11 @@ include("components/conn.php");
     <h3 style="font-family: fancy monospace;" >Urban Money Reports &nbsp;&nbsp;&nbsp;&nbsp;
    <div class="row">
     <?php 
-    session_start();
-    $d=$conn->query("SELECT * FROM `staff` WHERE `role`='Agent' AND `group_team_leader` ='$_GET[name]'"); 
+   
+    $d=$conn->query("SELECT * FROM `staff` WHERE `role`='Agent' AND `area_sales_manager`= '$_SESSION[Area_Sales_Manager]'"); 
     while($data=$d->fetch_assoc())  
     echo'<div class="col-2">
-    <a href="customleads.php?name='.$data["name"].'">
+    <a href="customleads.php?name='.$data["email"].'">
         <div class="card">
             <div class="card-body text-center">
                 <i class="fa fa-user"></i>

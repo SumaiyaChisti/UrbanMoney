@@ -22,10 +22,13 @@ while($data=mysqli_fetch_assoc($d)){
           <td>'.$data['state'].'</td>
           <td>'.$data['city'].'</td>
           <td>'.$data['role'].'</td>
-          <td><button id="'.$data['id'].$sno.'jun1" value="'.$data['id'].'" onclick="return showData1(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" type="button" class="btn btn-outline-secondary btn-sm"  > <i class="fa-solid fa-plus"></i></button>
-    </tr>
+          <td>
+          <button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData1(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
+        
   
-    '
+          </tr>
+  
+    '  
     ;
  
    }
@@ -51,8 +54,10 @@ if(isset($_POST['id1'])){
               <td>'.$data['state'].'</td>
               <td>'.$data['city'].'</td>
               <td>'.$data['role'].'</td>
-              <td><button id="'.$data['id'].$sno.'jun2" value="'.$data['id'].'"  onclick="return showData2(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" type="button" class="btn btn-outline-secondary btn-sm"  > <i class="fa-solid fa-plus"></i></button>
-        </tr>
+              <td>
+              <button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData2(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
+        
+              </tr>
        
         '
         ;
@@ -77,8 +82,10 @@ if(isset($_POST['id2'])){
               <td>'.$data['state'].'</td>
               <td>'.$data['city'].'</td>
               <td>'.$data['role'].'</td>
-              <td><button id="'.$data['id'].$sno.'jun3" value="'.$data['id'].'"  onclick="return showData3(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" type="button" class="btn btn-outline-secondary btn-sm"  > <i class="fa-solid fa-plus"></i></button>
-        </tr>
+              <td>
+              <button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData3(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
+        
+              </tr>
        
         '
         ;
@@ -103,8 +110,10 @@ if(isset($_POST['id2'])){
                   <td>'.$data['state'].'</td>
                   <td>'.$data['city'].'</td>
                   <td>'.$data['role'].'</td>
-                  <td><button id="'.$data['id'].$sno.'jun4" value="'.$data['id'].'"  onclick="return showData4(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" type="button" class="btn btn-outline-secondary btn-sm"  > <i class="fa-solid fa-plus"></i></button>
-            </tr>
+                  <td>
+                  <button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData4(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
+        
+                  </tr>
            
             '
             ;
@@ -131,8 +140,10 @@ if(isset($_POST['id2'])){
                       <td>'.$data['state'].'</td>
                       <td>'.$data['city'].'</td>
                       <td>'.$data['role'].'</td>
-                      <td><button id="'.$data['id'].$sno.'jun5" value="'.$data['id'].'"  onclick="return showData5(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" type="button" class="btn btn-outline-secondary btn-sm"  > <i class="fa-solid fa-plus"></i></button>
-                </tr>
+                      <td>
+                      <button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData5(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
+        
+                      </tr>
                
                 '
                 ;

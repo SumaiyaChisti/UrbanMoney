@@ -52,6 +52,11 @@ if(isset($_POST['submit']))
       $_SESSION["Team_Leader"]=$email;
       header("location:../TL/index.php");
     }
+    else if($r=auth_gaurd($email,$password,'dsa'))
+    {
+      $_SESSION["dsa"]=$email;
+      header("location:../dsa/index.php");
+    }
     else
     echo'<script>alert("wrong email or password");</script>';
 }

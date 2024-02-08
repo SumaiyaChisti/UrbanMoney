@@ -26,6 +26,12 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;My Team
               </a>
             </div>
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-drawer-link" href="myprofile.php">
+              <i class="fa-solid fa-user-group"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp;My Profile
+              </a>
+            </div>
            
            
            

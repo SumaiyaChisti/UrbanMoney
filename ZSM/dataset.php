@@ -12,7 +12,7 @@ if(isset($_POST['id'])){
             $sno=$sno+1;
         echo'
       
-        <tr id="'.$data['id'].$sno.'">
+        <tr id="'.$data['id'].$sno.'"> 
               <td></td>
               <td>'.$data['id'].'</td> 
               <td>'.$data['name'].'</td>

@@ -10,7 +10,7 @@ if(isset($_POST['submit'])) {
 ?>
 
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="en">  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,11 +68,7 @@ if(isset($_POST['submit'])) {
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
+       
         
       </div>
     </aside>

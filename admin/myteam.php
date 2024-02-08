@@ -10,7 +10,7 @@ if(isset($_POST['submit'])) {
 }
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -69,12 +69,7 @@ if(isset($_POST['submit'])) {
        include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
-        
+       
       </div>
     </aside>
     <!-- partial -->
@@ -125,7 +120,8 @@ while($data=mysqli_fetch_assoc($d))
           <td>'.$data['state'].'</td>
           <td>'.$data['city'].'</td>          
           <td>'.$data['role'].'</td>
-          <td><button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
+          <td>
+          <button  id="'.$data['id'].$sno.'jun"  value="'.$data['id'].$sno.'"  onclick="return showData(this.value,'.$data['id'].$sno.','.$sig.$data["email"].$sig.',event)" class="btn btn-outline-secondary btn-sm"> <i class="fa-solid fa-plus"></i></button>
          </td>
           </tr>
           ';
@@ -211,6 +207,7 @@ $.ajax(
         },
         success: function (data){
        $('#'+id1).after(data);
+       console.log(data);
         }
     });
     return false;
@@ -232,6 +229,7 @@ $.ajax(
         },
         success: function (data){
        $('#'+id2).after(data);
+       console.log(data);
         }
     });
      return false;
@@ -257,6 +255,7 @@ $.ajax(
         },
         success: function (data){
        $('#'+id3).after(data);
+       console.log(data);
         }
     });
     return false;
@@ -279,6 +278,7 @@ $.ajax(
         },
         success: function (data){
        $('#'+id4).after(data);
+       console.log(data);
         }
     });
      return false;

@@ -22,7 +22,7 @@
             </div>
            
             <div class="mdc-list-item mdc-drawer-item">
-              <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="ui-sub-menu">
+              <a class="mdc-expansion-panel-link" href="myprofile.php" data-toggle="expansionPanel" data-target="ui-sub-menu">
               <i class="fa-solid fa-user "></i>
                   &nbsp; &nbsp; Profile
                 
@@ -35,13 +35,20 @@
                 Add
               </a>
             </div>
-
+            <div class="mdc-list-item mdc-drawer-item">
+              <a class="mdc-expansion-panel-link" href="leads.php" data-toggle="expansionPanel" data-target="ui-sub-menu">
+              <i class="fa-solid fa-circle-check "></i>
+                  &nbsp; &nbsp; Lead Status
+                
+              </a>
+            </div>
+           
 
             
             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-drawer-link" href="view.php">
                 <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
-                Table
+                View Forms
               </a>
             </div>
             

@@ -65,12 +65,7 @@ session_start();
          include("components/sidenav.php");
          ?>
         </div>
-        <div class="profile-actions">
-          <a href="javascript:;">Settings</a>
-          <span class="divider"></span>
-          <a href="logout.php">Logout</a>
-        </div>
-        
+    
       </div>
     </aside>
     <!-- partial -->
