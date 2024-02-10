@@ -1,13 +1,9 @@
 
 <?php
-   session_start();
+session_start();
+if (isset($_SESSION['admin'])) {
+   
 include("components/conn.php");
-if(isset($_POST['submit'])) {
-  
-    $q = "INSERT INTO `leads`(`Reference_Number`,`Campaign_Name`,`Customer_Name`,`State`,`City`,`Pin_code`,`Customer_Contact_number`,`Custome_Email_Id`,`Cibil`,`Report`,`Annual_Income`,`Max_Loan_Amount`,`Min_Loan_Amount`,`Pan_ID`,`Processing_Fee`,`Tenure`,`Minimun_Tenure`,`Lead_Status`,`FollowUp_Date`,`Comments`,`Phone_Call`,`LINK_TO_CUSTOMER`,`HIT_API`)VALUES ('$_POST[Reference_Number]','$_POST[Campaign_Name]','$_POST[Customer_Name]','$_POST[State]','$_POST[City]','$_POST[Pin_Code]','$_POST[Customer_Contact_Number]','$_POST[Customer_Email_ID]','$_POST[Cibil]','$_POST[Report]','$_POST[Annual_Income]','$_POST[Max_Loan_Amount]','$_POST[Min_Loan_Amount]','$_POST[Pan_ID]','$_POST[Processing_Fee]','$_POST[Tenure]','$_POST[Minimum_Tenure]','$_POST[Lead_Status]','$_POST[FollowUp_Date]','$_POST[Comments]','$_POST[Phone_Call]','$_POST[LINK_TO_CUSTOMER]','$_POST[HIT_API]')";
-    $d = mysqli_query($conn,$q);
-    
-}
 ?>
 
 <!DOCTYPE html>
@@ -311,3 +307,10 @@ else{
 
 
 </html>
+<?php
+
+}
+else
+header("location:login.php");
+
+?>

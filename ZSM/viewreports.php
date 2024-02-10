@@ -1,5 +1,7 @@
 <?php
+session_start();
 include("components/conn.php");
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
 
 include("mask.php");
 
@@ -264,3 +266,7 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}else
+header("location:../admin/login.php");
+?>

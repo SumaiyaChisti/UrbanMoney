@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+if (isset($_SESSION['Branch_Manager'])) {
+
 include("components/conn.php");
 // if(isset($_POST['submit'])) {
   
@@ -159,3 +161,11 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

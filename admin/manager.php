@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+if (isset($_SESSION['admin'])) {
 include("components/conn.php");
 // if(isset($_POST['submit'])) {
   
@@ -7,7 +9,7 @@ include("components/conn.php");
 //     $d = mysqli_query($conn,$q);
     
 // }
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -158,3 +160,10 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:login.php");
+
+
+?>

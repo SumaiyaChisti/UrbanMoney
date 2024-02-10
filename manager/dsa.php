@@ -1,6 +1,9 @@
 
 <?php
-   session_start();
+session_start();
+if (isset($_SESSION['Manager'])) {
+  
+   
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   
@@ -276,3 +279,11 @@ $(function () {
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

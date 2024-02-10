@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+  if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -230,3 +232,11 @@ else{
 </script>
 
 </html>
+<?php
+
+  }
+  else
+  header("location:login.php");
+
+
+?>

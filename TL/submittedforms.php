@@ -1,8 +1,11 @@
 
 <?php
+session_start();
+if (isset($_SESSION['Team_Leader'])) {
+
 include("components/conn.php");
 
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -186,3 +189,10 @@ session_start();
 
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+?>

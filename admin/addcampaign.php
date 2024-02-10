@@ -1,4 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['admin'])) {
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,6 +64,7 @@
         <div class="mdc-list-group">
          <!-- nav yaha hai -->
          <?php
+        
          include("components/sidenav.php");
         
          ?>
@@ -176,3 +182,10 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+
+         }
+         else
+         header("location:login.php");
+
+?>

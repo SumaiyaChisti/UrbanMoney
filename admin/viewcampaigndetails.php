@@ -1,6 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['admin'])) {
 
-
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -123,3 +125,10 @@
 </script>
 
 </html>
+<?php
+}
+else
+
+header("location:login.php");
+
+?>

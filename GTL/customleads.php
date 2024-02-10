@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['Group_Team_Leader'])) {
+include("components/conn.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -228,4 +230,12 @@ else{
 }
 </script>
 
-</html>#    1`
+</html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

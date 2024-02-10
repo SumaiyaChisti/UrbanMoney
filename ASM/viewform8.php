@@ -1,6 +1,7 @@
 
 <?php
 include("components/conn.php");
+if (isset($_SESSION['Area_Sales_Manager'])) {
 session_start();
 ?>
 
@@ -163,3 +164,12 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

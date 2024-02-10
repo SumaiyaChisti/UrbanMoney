@@ -3,6 +3,7 @@
 session_start();
 include("components/conn.php");
 if(isset($_SESSION['Area_Sales_Manager'])){
+
     $Q="SELECT * FROM `staff` WHERE `email`='$_SESSION[Area_Sales_Manager]'";
     $D=mysqli_query($conn,$Q) ;
     $DATA=mysqli_fetch_assoc($D);

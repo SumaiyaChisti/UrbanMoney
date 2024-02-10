@@ -1,6 +1,8 @@
 
 <?php
-   session_start();
+session_start();
+  if (isset($_SESSION['admin'])) {
+   
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   
@@ -253,3 +255,10 @@ else{
 </script>
 
 </html>
+<?php
+
+  }
+  else
+  header("location:login.php");
+
+?>

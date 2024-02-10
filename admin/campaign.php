@@ -51,6 +51,7 @@
         <div class="mdc-list-group">
          <!-- nav yaha hai -->
          <?php
+           if (isset($_SESSION['admin'])) {
          include("components/sidenav.php");
          ?>
         </div>
@@ -109,3 +110,8 @@
 </script>
 </body>
 </html>
+<?php
+           }
+           else
+header("location:login.php");
+?>

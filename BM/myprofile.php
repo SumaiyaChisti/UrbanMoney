@@ -1,8 +1,9 @@
 
 <?php
 session_start();
+
 include("components/conn.php");
-if(isset($_SESSION['Branch_Manager'])){
+if(isset($_SESSION['Branch_Manager'])){{
     $Q="SELECT * FROM `staff` WHERE `email`='$_SESSION[Branch_Manager]'";
     $D=mysqli_query($conn,$Q) ;
     $DATA=mysqli_fetch_assoc($D);
@@ -180,3 +181,11 @@ if(isset($_POST['submit']))
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

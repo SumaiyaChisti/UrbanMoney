@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <title>Document</title>
@@ -66,6 +67,7 @@
 <div class="container">
     <div class="main-body">
     <?php
+      if (isset($_SESSION['admin'])) {
     include("./components/conn.php");
     $d=$conn->query("SELECT * FROM `form6` WHERE `id`='$_GET[id]'");
     $r=mysqli_fetch_assoc($d);
@@ -87,112 +89,86 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
+                      <br>
                       <h4><?php echo $r['name'];?></h4>
-                      <p class="text-secondary mb-1">Full Stack Developer</p>
-                      <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button class="btn btn-primary">Follow</button>
-                      <button class="btn btn-outline-primary">Message</button>
+                      <br>
+
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card mt-3">
+                <h5 style="text-align: center; padding-top: 2rem; " >Documents</h5>
+                <hr>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                   <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 50px; " >Pan Card Copy of Applicant And Co-Applicant</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 30px; padding-left: 35px; " >Aadhaar Card of Applicant & Co-Applicant</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download" ></i></a>
-                      </div>
-                   </div>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"></path></svg>Pan Card Of Applicant And Co-Applicant</h6>
+                    
+                     <span><a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Aadhar Card of Applicant & Co-Applicant</h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Residentail Light Bill And Telephone Bill Of Latest Month</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top:20px; padding-left: 10px; " >Residential light bill & telephone bill </h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 20px; padding-left: 13px; " >Relationship Proof Of Applicant and Co-Applicant</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['relationship_proof']?>"><i class="fa fa-download" ></i></a>
-                      </div>
-                   </div>
-                  </li>
-                  
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 15px; " >Last 3 Months Salary Slip And Last 2 years Form 16</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['salary_slip']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 15px; padding-left: 20px; " >Offer Letter And Visiting Card Copy/ID Card Copy</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['id_card']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
-                  </li>
-                  
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 2px; padding-top: 2px; " >Last 6 Months Banking In Which Salary Is Credited</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['six_months_banking']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 10px; padding-left: 15px; " >All On Going Loans On Company And Individual Name Sanction Letter And Repayment Track Record</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['ongoing_loans']?>"><i class="fa fa-download"></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Relationship Proof Of Applicant & Co-Applicant</h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['relationship_proof']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 5px; " >Sale Agreement/Draft Agreement(Builder Purchase)</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['sale_agreement']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 5px; padding-left: 20px; " >Chain Agreement Copy And Sale Agreement Copy(Resale Property) </h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['chain_agreement']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Last 3 Months Salary Slip & ALST 2 Years Form 16</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['salary_slip']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 5px; " >OC Copy/CC Copy</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['OC_CC']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-left: 3px;"  >BMC Approved Plan Copy</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['BMC']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Offer Letter & Visiting Card Copy/ID Card Copy</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['id_card']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 20px; padding-left: 5px; " >Certificate Front And Back Side Copy</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['certificate']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 35px; padding-left: 20px; " >3-4 Photographs of Applicant And Co-Applicant</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Last 6 Months Banking In Which Salary Is Credited</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['six_months_banking']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
-
-
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>All Ongoing Loans Sanction Letter & Repayment Track Record </h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['ongoing_loans']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                 
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0"></path></svg>Sale Agreement/Draft Agreement</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['sale_agreement']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Chain Agreement Copy & Sale Agreement Copy</h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['chain_agreement']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>OC Copy/CC Copy</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['OC_CC']?>"><i class="fa fa-download"></i></a></span>
+                  </li>
+                 
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>BMC Approved Plan Copy</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['BMC']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Share Certificate Front & Back Side Copy</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['certificate']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>3-4 Phtographs Of Both Applicant & Co-Applicant Each </h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                 
                 </ul>
               </div>
             </div>
             <div class="col-md-8">
               <div class="card mb-3">
                 <div class="card-body">
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">DOB</h6>
@@ -202,6 +178,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Email</h6>
@@ -211,6 +188,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Gender</h6>
@@ -220,6 +198,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Mobile</h6>
@@ -229,6 +208,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
@@ -238,6 +218,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Pan ID</h6>
@@ -247,6 +228,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Property Ownership</h6>
@@ -256,6 +238,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Marital Status</h6>
@@ -265,6 +248,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Place Of Work</h6>
@@ -274,6 +258,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Job Title</h6>
@@ -283,6 +268,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0"> Work Address</h6>
@@ -292,6 +278,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Years Employes</h6>
@@ -301,6 +288,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Monthly Net Income</h6>
@@ -310,6 +298,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Bank Name</h6>
@@ -319,6 +308,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Branch Name</h6>
@@ -328,6 +318,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Account Number</h6>
@@ -337,6 +328,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Account Type</h6>
@@ -346,6 +338,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Purpose Of Loan</h6>
@@ -355,6 +348,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Requested Loan</h6>
@@ -363,6 +357,8 @@
                     <?php echo $r['requested_loan_amount'];?>
                     </div>
                   </div>
+                  <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Terms IN</h6>
@@ -371,71 +367,12 @@
                     <?php echo $r['terms_in'];?>
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div>
+                  
+
                 </div>
               </div>
 
-              <div class="row gutters-sm">
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 mb-3">
-                  <div class="card h-100">
-                    <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
 
 
 
@@ -446,3 +383,11 @@
     </div>
 </body>
 </html>
+<?php
+
+      }
+      else
+      header("location:login.php");
+
+
+?>

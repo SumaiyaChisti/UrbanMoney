@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 // if(isset($_POST['submit'])) {
   
 //     $q = "INSERT INTO `umutility`(`name`)VALUES ('$_POST[name]')";
@@ -159,3 +161,10 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:login.php");
+
+
+?>

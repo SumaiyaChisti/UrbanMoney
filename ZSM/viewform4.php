@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+include("components/conn.php");
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
+
 ?>
 
 <!DOCTYPE html>
@@ -162,3 +164,8 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+?>

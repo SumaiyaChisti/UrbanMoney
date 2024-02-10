@@ -2,6 +2,7 @@
 <?php
 include("components/conn.php");
 session_start();
+if (isset($_SESSION['Branch_Manager'])) {
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +79,7 @@ session_start();
         <main class="content-wrapper">
         <main >
   <div class="container pt-4">
-    <h3 style="font-family: fancy monospace;" >View Designation</h3>
+    <h3 style="font-family: fancy monospace;" >View </h3>
     <br>
     <table class="table   table-bordered table-hover " >
 <tr>
@@ -110,7 +111,7 @@ while($data=mysqli_fetch_assoc($d))
          
          
          
-         <td><a class="btn "href="=detailview7.php?id='.$data['id'].'"><i class="fa-solid fa-eye"></i></a></td>
+         <td><a class="btn "href="detailview7.php?id='.$data['id'].'"><i class="fa-solid fa-eye"></i></a></td>
      
      </tr>';
 }
@@ -163,3 +164,11 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

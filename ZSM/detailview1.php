@@ -71,6 +71,8 @@
 <div class="container">
     <div class="main-body">
     <?php
+    session_start();
+    if (isset($_SESSION['Zonal_Sales_Manager'])) {
     include("./components/conn.php");
     $d=$conn->query("SELECT * FROM `form1` WHERE `id`='$_GET[id]'");
     $r=mysqli_fetch_assoc($d);
@@ -412,3 +414,8 @@
     </div>
 </body>
 </html>
+<?php
+    }
+    else
+    header("location:../admin/login.php");
+?>

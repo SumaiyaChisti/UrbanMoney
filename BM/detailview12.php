@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION['Branch_Manager'])) {
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -410,3 +414,11 @@
     </div>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

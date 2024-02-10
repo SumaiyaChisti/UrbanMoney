@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
+
 
 ?>
 <!DOCTYPE html>
@@ -290,3 +292,11 @@ session_start();
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

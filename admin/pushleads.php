@@ -1,11 +1,15 @@
 
 <?php
-
+use PhpOffice\PhpSpreadsheet\IOFactory;
+session_start();
+if (isset($_SESSION['admin'])) {
 include("components/conn.php");
 include("../vendor/autoload.php");
 include("mask.php");
-use PhpOffice\PhpSpreadsheet\IOFactory;
-session_start();
+
+
+
+
 
 if(isset($_POST['addstatusbutton']))
 {
@@ -430,3 +434,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+
+}
+
+else
+header("location:login.php");
+
+?>

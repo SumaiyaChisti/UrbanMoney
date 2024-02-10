@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 if(isset($_POST['submit'])) {
   
     $q = "INSERT INTO `users`(`name`,`link`)VALUES ('$_POST[name]','$_POST[link]')";
@@ -164,3 +166,10 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+<?php
+}
+else
+
+header("location:login.php");
+
+?>

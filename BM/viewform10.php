@@ -2,6 +2,9 @@
 <?php
 include("components/conn.php");
 session_start();
+if (isset($_SESSION['Branch_Manager'])) {
+
+
 ?>
 
 <!DOCTYPE html>
@@ -163,3 +166,11 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

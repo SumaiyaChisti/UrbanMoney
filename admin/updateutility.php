@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 if(isset($_GET['id'])){
     $Q="SELECT * FROM `umutility` WHERE `id`='$_GET[id]'";
     $D=mysqli_query($conn,$Q) ;
@@ -162,3 +164,10 @@ if(isset($_POST['submit']))
 </script>
 
 </html>
+<?php
+}
+else
+
+header("location:login.php");
+
+?>

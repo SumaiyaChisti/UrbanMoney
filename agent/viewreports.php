@@ -3,6 +3,7 @@ include("components/conn.php");
 
 include("mask.php");
 session_start();
+if (isset($_SESSION['agent'])) {
 
 
   
@@ -264,3 +265,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

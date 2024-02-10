@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+  if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 if(isset($_POST['submit'])) {
     $q = "INSERT INTO `staff`(`name`,`email`,`password`,`contact`,`state`,`city`,`role`,`group_team_leader`,`team_leader`,`manager`,`branch_manager`,`area_sales_manager`,`zonal_sales_manager`,`campaign`)VALUES ('$_POST[name]','$_POST[email]','$_POST[password]','$_POST[contact]','$_POST[state]','$_POST[city]','$_POST[role]','$_POST[group_team_leader]','$_POST[team_leader]','$_POST[manager]','$_POST[branch_manager]','$_POST[area_sales_manager]','$_POST[zonal_sales_manager]','$_POST[campaign]')";
     $d = mysqli_query($conn,$q);
@@ -369,3 +371,9 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+<?php
+  }
+  else
+  header("location:login.php");
+
+?>

@@ -1,6 +1,8 @@
 <?php
 include("components/conn.php");
 session_start();
+if (isset($_SESSION['Branch_Manager'])) {
+  
 $d=$conn->query("SELECT * FROM `leads`");
   $num=mysqli_num_rows($d);
 
@@ -378,3 +380,11 @@ $d=$conn->query("SELECT * FROM `leads`");
   <script> var table = new DataTable("table")</script>
 </body>
 </html> 
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

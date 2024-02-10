@@ -1,8 +1,12 @@
 <?php
+
 include("components/conn.php");
 include("../vendor/autoload.php");
 include("mask.php");
 use PhpOffice\PhpSpreadsheet\IOFactory;
+session_start();
+
+if (isset($_SESSION['agent'])) {
 
 if(isset($_POST['submit'])) 
 {
@@ -320,3 +324,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

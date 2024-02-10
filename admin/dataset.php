@@ -1,8 +1,10 @@
 
 
 <?php
-include("components/conn.php");
 session_start();
+  if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 $sno=0;
 if(isset($_POST['id'])){
 $d=mysqli_query($conn,"SELECT * FROM `staff` WHERE `zonal_sales_manager`='$_POST[email]'");
@@ -174,4 +176,9 @@ if(isset($_POST['id2'])){
                     }
                 }
                 }
+                ?>
+                <?php
+            }
+            else
+            header("location:login.php");
 ?>

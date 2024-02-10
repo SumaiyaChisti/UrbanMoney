@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+if (isset($_SESSION['agent'])) {
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   $dir = "uploads/";
@@ -30,18 +31,20 @@ if(isset($_POST['submit'])) {
   move_uploaded_file($_FILES['sale_agreement']['tmp_name'],$fullpath11);
   $fullpath12 = $dir . basename($_FILES['chain_agreement']['name']);
   move_uploaded_file($_FILES['chain_agreement']['tmp_name'],$fullpath12);
-  $fullpath13 = $dir . basename($_FILES['OC_CC']['name']);
-  move_uploaded_file($_FILES['OC_CC']['tmp_name'],$fullpath13);
-  $fullpath14 = $dir . basename($_FILES['plan_copy']['name']);
-  move_uploaded_file($_FILES['plan_copy']['tmp_name'],$fullpath14);
-  $fullpath15 = $dir . basename($_FILES['certificate']['name']);
-  move_uploaded_file($_FILES['certificate']['tmp_name'],$fullpath15);
-  $fullpath16 = $dir . basename($_FILES['LOD']['name']);
-  move_uploaded_file($_FILES['LOD']['tmp_name'],$fullpath16);
-  $fullpath17 = $dir . basename($_FILES['outstanding_letter']['name']);
-  move_uploaded_file($_FILES['outstanding_letter']['tmp_name'],$fullpath17);
+  $fullpath13 = $dir . basename($_FILES['OC']['name']);
+  move_uploaded_file($_FILES['OC']['tmp_name'],$fullpath13);
+  $fullpath14 = $dir . basename($_FILES['CC']['name']);
+  move_uploaded_file($_FILES['CC']['tmp_name'],$fullpath14);
+  $fullpath15 = $dir . basename($_FILES['plan_copy']['name']);
+  move_uploaded_file($_FILES['plan_copy']['tmp_name'],$fullpath15);
+  $fullpath16 = $dir . basename($_FILES['certificate']['name']);
+  move_uploaded_file($_FILES['certificate']['tmp_name'],$fullpath16);
+  $fullpath17 = $dir . basename($_FILES['LOD']['name']);
+  move_uploaded_file($_FILES['LOD']['tmp_name'],$fullpath17);
+  $fullpath18 = $dir . basename($_FILES['outstanding_letter']['name']);
+  move_uploaded_file($_FILES['outstanding_letter']['tmp_name'],$fullpath18);
 
-    $q ="INSERT INTO `form12`(`name`,`dob`,`gender`,`contact`,`email`,`address`,`pan_id`,`property_ownership`,`marital_status`,`place_of_work`,`job_title`,`work_address`,`years_employed`,`monthly_net_income`,`pan_card`,`aadhaar_card`,`residential_bill`,`license`,`GST_registration`,`GST_3B`,`relationship_proof`,`ITR`,`banking`,`SA_banking`,`photographs`,`sale_agreement`,`chain_agreement`,`OC_CC`,`plan_copy`,`certificate`,`LOD`,`outstanding_letter`,`bank_name`,`branch_name`,`account_number`,`account_type`,`purpose_of_loan`,`requested_loan_amount`,`terms_in`)VALUES ('$_POST[name]','$_POST[dob]','$_POST[gender]','$_POST[contact]','$_POST[email]','$_POST[address]','$_POST[pan_id]','$_POST[property_ownership]','$_POST[marital_status]','$_POST[place_of_work]','$_POST[job_title]','$_POST[work_address]','$_POST[years_employed]','$_POST[monthly_net_income]','$fullpath','$fullpath1','$fullpath2','$fullpath3','$fullpath4','$fullpath5','$fullpath6','$fullpath7','$fullpath8','$fullpath9','$fullpath10','$fullpath11','$fullpath12','$fullpath13','$fullpath14','$fullpath15','$fullpath16','$fullpath17','$_POST[bank_name]','$_POST[branch_name]','$_POST[account_number]','$_POST[account_type]','$_POST[purpose_of_loan]','$_POST[requested_loan_amount]','$_POST[terms_in]')";
+    $q ="INSERT INTO `form12`(`name`,`dob`,`gender`,`contact`,`email`,`address`,`pan_id`,`property_ownership`,`marital_status`,`place_of_work`,`job_title`,`work_address`,`years_employed`,`monthly_net_income`,`pan_card`,`aadhaar_card`,`residential_bill`,`license`,`GST_registration`,`GST_3B`,`relationship_proof`,`ITR`,`banking`,`SA_banking`,`photographs`,`sale_agreement`,`chain_agreement`,`OC`,`CC`,`plan_copy`,`certificate`,`LOD`,`outstanding_letter`,`bank_name`,`branch_name`,`account_number`,`account_type`,`purpose_of_loan`,`requested_loan_amount`,`terms_in`)VALUES ('$_POST[name]','$_POST[dob]','$_POST[gender]','$_POST[contact]','$_POST[email]','$_POST[address]','$_POST[pan_id]','$_POST[property_ownership]','$_POST[marital_status]','$_POST[place_of_work]','$_POST[job_title]','$_POST[work_address]','$_POST[years_employed]','$_POST[monthly_net_income]','$fullpath','$fullpath1','$fullpath2','$fullpath3','$fullpath4','$fullpath5','$fullpath6','$fullpath7','$fullpath8','$fullpath9','$fullpath10','$fullpath11','$fullpath12','$fullpath13','$fullpath14','$fullpath15','$fullpath16','$fullpath17','$fullpath18','$_POST[bank_name]','$_POST[branch_name]','$_POST[account_number]','$_POST[account_type]','$_POST[purpose_of_loan]','$_POST[requested_loan_amount]','$_POST[terms_in]')";
     $d = mysqli_query($conn,$q);
     if ($d) {
         echo '
@@ -293,9 +296,13 @@ if(isset($_POST['submit'])) {
     <div class="form-outline mt-4">
   <input type="file" id="formControlLg" name="chain_agreement"  class="form-control form-control-lg" required />
     </div>
-    <h6 style="margin-top: 15px; color:blue" class="form-label" for="formControlLg">OC Copy/CC Copy. </h6>
+    <h6 style="margin-top: 15px; color:blue" class="form-label" for="formControlLg">OC Copy </h6>
     <div class="form-outline mt-4">
-  <input type="file" id="formControlLg" name="OC_CC"  class="form-control form-control-lg" required />
+  <input type="file" id="formControlLg" name="OC"  class="form-control form-control-lg" required />
+    </div>
+    <h6 style="margin-top: 15px; color:blue" class="form-label" for="formControlLg">CC Copy </h6>
+    <div class="form-outline mt-4">
+  <input type="file" id="formControlLg" name="CC"  class="form-control form-control-lg" required />
     </div>
     <h6 style="margin-top: 15px; color:blue" class="form-label" for="formControlLg">Approved Plan Copy.</h6>
     <div class="form-outline mt-4">
@@ -399,3 +406,11 @@ if(isset($_POST['submit'])) {
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

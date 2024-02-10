@@ -1,3 +1,10 @@
+
+<?php
+
+session_start();
+if (isset($_SESSION['Area_Sales_Manager'])) {
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -286,3 +293,11 @@
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

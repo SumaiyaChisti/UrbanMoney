@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+
+if (isset($_SESSION['agent'])) {
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   $dir = "uploads/";
@@ -363,3 +365,11 @@ if(isset($_POST['submit'])) {
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

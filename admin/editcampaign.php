@@ -40,6 +40,11 @@
 </head>
 
 <body>
+  <?php
+  if (isset($_SESSION['admin'])) {
+  
+  ?>
+  
 <script src="assets/js/preloader.js"></script>
 
   <div class="body-wrapper">
@@ -309,3 +314,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+
+
+  }
+  else
+  header("location:login.php");
+  
+  ?>

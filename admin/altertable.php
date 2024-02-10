@@ -1,4 +1,5 @@
 <?php
+  if (isset($_SESSION['admin'])) {
    session_start();
 include("components/conn.php");
 if($_POST['status']=='enable')
@@ -15,4 +16,10 @@ DROP $_POST[fieldname] ";
 mysqli_query($conn,$sql);
 echo "ok";
 }
+?>
+<?php
+  }
+  else
+  header("location:login.php");
+
 ?>

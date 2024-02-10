@@ -1,4 +1,17 @@
+
+<?php
+session_start();
+if (isset($_SESSION['admin'])) {
+
+?>
+
+
+
+
 <!DOCTYPE html>
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -110,3 +123,9 @@
   <!-- End custom js for this page-->
 </body>
 </html>
+<?php
+}
+else
+header("loction:login.php");
+
+?>

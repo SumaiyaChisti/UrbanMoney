@@ -4,6 +4,8 @@ include("components/conn.php");
 include("../vendor/autoload.php");
 include("mask.php");
 use PhpOffice\PhpSpreadsheet\IOFactory;
+session_start();
+if (isset($_SESSION['agent'])) {
 
 
 
@@ -193,7 +195,7 @@ error_reporting(0);
 
 <?php
 include("components/conn.php");
-$q = "SELECT * FROM `leads` WHERE  `Agent_Email` = '$_SESSION[agent]'";
+$q = "SELECT * FROM `leads` WHERE  `agent_name` = '$_SESSION[agent]'";
 $d=mysqli_query($conn, $q);
 $co=mysqli_num_rows($d);
 while($data=mysqli_fetch_assoc($d))
@@ -350,3 +352,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

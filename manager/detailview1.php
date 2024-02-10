@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+
+<?php
+session_start();
+if (isset($_SESSION['Manager'])) {
+  ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -412,3 +416,11 @@
     </div>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

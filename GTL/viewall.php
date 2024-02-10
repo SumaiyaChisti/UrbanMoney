@@ -1,8 +1,10 @@
 <?php
+session_start();
 include("components/conn.php");
+if (isset($_SESSION['Group_Team_Leader'])) {
 
 include("mask.php");
-session_start();
+
 
 
   
@@ -273,3 +275,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

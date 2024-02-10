@@ -1,14 +1,16 @@
 
 
 <?php
+session_start();
 include("components/conn.php");
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
 // if(isset($_POST['submit'])) {
   
 //     $q = "INSERT INTO `umutility`(`name`)VALUES ('$_POST[name]')";
 //     $d = mysqli_query($conn,$q);
     
 // }
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -160,3 +162,8 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+?>

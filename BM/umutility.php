@@ -1,13 +1,12 @@
 
 <?php
 include("components/conn.php");
-if(isset($_POST['submit'])) {
-  
-    $q = "INSERT INTO `umutility`(`name`)VALUES ('$_POST[name]')";
-    $d = mysqli_query($conn,$q);
-    
-}
+
 session_start();
+if (isset($_SESSION['Branch_Manager'])) {
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -172,3 +171,11 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

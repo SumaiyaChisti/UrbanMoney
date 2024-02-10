@@ -1,5 +1,6 @@
 <?php
 session_start();
+if (isset($_SESSION['agent'])) {
 function maskPhoneNumber($phoneNumber) {
     // Keep the last four digits visible
     $visibleDigits = 2;
@@ -17,4 +18,12 @@ function maskPhoneNumber($phoneNumber) {
 // $originalNumber = '1234567890';
 // $maskedNumber = maskPhoneNumber($originalNumber);
 // echo $maskedNumber;
+?>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
 ?>

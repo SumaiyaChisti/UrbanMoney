@@ -3,8 +3,11 @@
 include("components/conn.php");
 session_start();
 
+if (isset($_SESSION['Branch_Manager'])) {
+  ?>
 
-?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -175,3 +178,11 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

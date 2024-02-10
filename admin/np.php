@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (isset($_SESSION['admin'])) {
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -92,3 +94,13 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
+    <?php
+    
+}
+else
+header("location:login.php");
+    
+    
+    
+    
+    ?>

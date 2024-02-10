@@ -8,7 +8,37 @@
       }
       
 </style>
+<link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-462d1fe84b879d730fe2180b0e0354e0.css?vsn=d"
+    >
 
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+      >
+
+      <link
+        rel="stylesheet"
+        href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+      >
 <link
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   rel="stylesheet"
@@ -22,7 +52,7 @@
             </div>
             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-drawer-link" href="myteam.php">
-              <i class="fa-solid fa-user-group"></i>
+              <i class="fa-solid fa-users "></i>
                 &nbsp;&nbsp;&nbsp;&nbsp;My Team
               </a>
             </div>
@@ -35,7 +65,8 @@
            
             <div class="mdc-list-item mdc-drawer-item">
               <a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="ui-sub-menu">
-              <i class="fa-solid fa-user-tie " style="font-size: 1.1rem;" ></i>
+              <i class="fa-light fa-users-medical"style="font-size: 1.1rem;" ></i>
+              
                   &nbsp; &nbsp; &nbsp; Staff
                 <i class="mdc-drawer-arrow material-icons">chevron_right</i>
               </a>

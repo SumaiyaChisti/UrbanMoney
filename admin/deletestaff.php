@@ -1,5 +1,8 @@
 <?php
-   session_start();
+session_start();
+
+if (isset($_SESSION['admin'])) {
+   
 include("components/conn.php");
 if(isset($_GET['id']))
 {
@@ -11,4 +14,12 @@ if(isset($_GET['id']))
 else{
     header("location:viewstaff.php");
 }
+?>
+<?php
+
+}
+
+else
+header("location:login.php");
+
 ?>

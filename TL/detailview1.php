@@ -1,3 +1,7 @@
+<?php
+session_start();
+if (isset($_SESSION['Team_Leader'])) {
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -412,3 +416,10 @@
     </div>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+?>

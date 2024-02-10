@@ -2,6 +2,7 @@
 <?php
 session_start();
 include("components/conn.php");
+if (isset($_SESSION['admin'])) {
 if(isset($_SESSION['agent'])){
     $Q="SELECT * FROM `staff` WHERE `email`='$_SESSION[admin]'";
     $D=mysqli_query($conn,$Q) ;
@@ -169,3 +170,10 @@ if(isset($_POST['submit']))
 </script>
 
 </html>
+<?php
+
+}
+else
+header("location:login.php");
+
+?>

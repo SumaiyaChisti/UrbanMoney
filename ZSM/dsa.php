@@ -1,6 +1,9 @@
 
 <?php
    session_start();
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
+
+
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   
@@ -277,3 +280,11 @@ $(function () {
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php")
+
+
+
+?>

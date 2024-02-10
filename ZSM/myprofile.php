@@ -1,7 +1,10 @@
 
 <?php
 session_start();
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
+
 include("components/conn.php");
+
 if(isset($_SESSION['Zonal_Sales_Manager'])){
     $Q="SELECT * FROM `staff` WHERE `email`='$_SESSION[Zonal_Sales_Manager]'";
     $D=mysqli_query($conn,$Q) ;
@@ -175,3 +178,10 @@ if(isset($_POST['submit']))
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+?>

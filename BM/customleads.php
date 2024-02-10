@@ -1,7 +1,10 @@
 
 <?php
-include("components/conn.php");
+
 session_start();
+if (isset($_SESSION['Branch_Manager'])) {
+
+include("components/conn.php");
 ?>
 
 <!DOCTYPE html>
@@ -230,3 +233,11 @@ else{
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

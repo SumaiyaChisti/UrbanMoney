@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+if (isset($_SESSION['agent'])) {
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   
@@ -7,7 +9,7 @@ if(isset($_POST['submit'])) {
     $d = mysqli_query($conn,$q);
     
 }
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -191,3 +193,11 @@ session_start();
 
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

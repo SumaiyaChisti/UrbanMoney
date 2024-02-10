@@ -1,4 +1,5 @@
 <?php
+  if (isset($_SESSION['admin'])) {
    session_start();
 include("components/conn.php");
 if(isset($_GET['id']))
@@ -11,4 +12,11 @@ if(isset($_GET['id']))
 else{
     header("location:dsa.php");
 }
+?>
+<?php
+  }
+  else
+  header("location:login.php");
+
+
 ?>

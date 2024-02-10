@@ -2,6 +2,7 @@
 include("components/conn.php");
 
 include("mask.php");
+if (isset($_SESSION['Area_Sales_Manager'])) {
 session_start();
 
 
@@ -272,3 +273,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

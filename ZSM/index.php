@@ -1,6 +1,8 @@
 <?php
 include("components/conn.php");
 session_start();
+if (isset($_SESSION['Zonal_Sales_Manager'])) {
+
 $d=$conn->query("SELECT * FROM `leads`");
   $num=mysqli_num_rows($d);
 
@@ -376,5 +378,14 @@ $d=$conn->query("SELECT * FROM `leads`");
   <!-- End custom js for this page-->
 
   <script> var table = new DataTable("table")</script>
+ 
 </body>
 </html> 
+<?php
+}else
+header("location:../admin/login.php");
+
+  
+  
+  
+  ?>

@@ -1,8 +1,10 @@
 <?php
+session_start();
+if (isset($_SESSION['admin'])) {
 include("components/conn.php");
 
 include("mask.php");
-session_start();
+
 
 
   
@@ -264,3 +266,10 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+
+header("location:login.php");
+
+?>

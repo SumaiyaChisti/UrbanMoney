@@ -1,4 +1,6 @@
 <?php
+session_start();
+if (isset($_SESSION['Manager'])) {
 include("components/conn.php");
 
 include("mask.php");
@@ -263,3 +265,11 @@ window.location.reload();
 </script>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+ 
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,9 +55,10 @@
         <div class="mdc-list-group">
          <!-- nav yaha hai -->
          <?php
+           if (isset($_SESSION['admin'])) {
          include("components/sidenav.php");
          include("./components/conn.php");
-         session_start();
+        
           function chart_count($status,$conn){
                 $dd=$conn->query("SELECT * FROM `leads` WHERE `lead_status`='$status'");
                 return mysqli_num_rows($dd);
@@ -290,3 +295,11 @@
 </script>
 
 </html>
+<?php
+
+
+        }
+        else
+        header("location:login.php");
+
+?>

@@ -1,6 +1,8 @@
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['Manager'])) {
+include("components/conn.php");
+
 
 ?>
 
@@ -305,3 +307,11 @@ $.ajax(
 
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

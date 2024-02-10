@@ -1,6 +1,10 @@
 <?php
-include("./components/conn.php");
+use ZipStream\Test\EndlessCycleStream;
 session_start();
+include("./components/conn.php");
+
+if (isset($_SESSION['admin'])) {
+
 
 
 
@@ -17,9 +21,16 @@ if(isset($_POST['lead_agent'])){
          mysqli_query($conn,"UPDATE  `leads` SET `agent_name`='$_POST[lead_agent]' WHERE `id`='$x'");
 
     }
-    session_destroy();
-    session_abort();
+   
     header("location:newleads.php");
 
 }
+?>
+<?php
+
+}
+
+else
+header("location:login.php");
+
 ?>

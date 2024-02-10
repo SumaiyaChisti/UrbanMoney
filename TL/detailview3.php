@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (isset($_SESSION['Team_Leader'])) {
+  ?><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -98,96 +101,68 @@
                 </div>
               </div>
               <div class="card mt-3">
+                <h5 style="text-align: center; padding-top: 1rem; " >Documents</h5>
+                <hr>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                   <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 50px; " >Pan Card</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 30px; padding-left: 35px; " >Aadhaar Card</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download" ></i></a>
-                      </div>
-                   </div>
-                  </li>
-                   
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top:20px; padding-left: 10px; " >Residential light bill & telephone bill </h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 20px; padding-left: 13px; " >Gomasta License(Renewed)</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['license']?>"><i class="fa fa-download" ></i></a>
-                      </div>
-                   </div>
+                    <h6 class="mb-0"></path></svg>Pan Card</h6>
+                    
+                     <span><a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Aadhar Card </h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Residentail & Office Light Bill And Telephone Bill Of Latest Month</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   
+                 
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 15px; " >Last 12 Months Service Tax/Sales Tax Receipt/VAT Challans As Applicable</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['tax_receipt']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 15px; padding-left: 20px; " >Last 3 Years ITR Financials With Audit Report</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['ITRfinancials_AuditReport']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
-                  </li>
-                  
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 2px; padding-top: 2px; " >Last 12 Months Bank Statements of Company All Accounts</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['bank_statement']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 10px; padding-left: 15px; " >Last 6 Months Bank Statement of Saving Accounts</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['bank_statement_Saving_Accounts']?>"><i class="fa fa-download"></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Gomasta License</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['license']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 5px; " >All OnGoing Loans Sanction Letter And Repayment Track Record </h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['ongoing_loans']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 5px; padding-left: 20px; " >3-4 Photographs</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Last 12 Months Service TAX/Sales TAX Receipt/VAT Challans As Applicable</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['tax_receipt']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 5px; " >5 years Old Business Continuity Proof </h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['business_proof']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-left: 3px;"  >Last 12 Months GST 3B Applicable</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_3B']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Last 3 Years ITR Financials With Audit Report</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['ITRfinancials_AuditReport']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 35px; padding-left: 20px; " >GST Resgistration</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_registration']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                      <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 20px; padding-left: 5px; " >error</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_registration']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Last 12 Months Bank Statement Of Company All Accounts </h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['bank_statement']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Last 6 Months Bank Statement Of Saving Account </h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['bank_statement_Saving_Accounts']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                 
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>All Ongoing Loans Sanction Letter And Repayment Track Record</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['ongoing_loans']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                 
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>3-4 Phtographs</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>5 Years Old Business Continuity Proof</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['business_proof']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Last 12 Months GST 3B Applicable</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['GST_3B']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>GST Registration</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['GST_registration']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
 
+                 
                 </ul>
               </div>
             </div>
@@ -356,6 +331,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Requested Loan</h6>
@@ -364,6 +340,8 @@
                     <?php echo $r['requested_loan_amount'];?>
                     </div>
                   </div>
+                  <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Terms IN</h6>
@@ -372,12 +350,7 @@
                     <?php echo $r['terms_in'];?>
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
 
@@ -391,3 +364,10 @@
     </div>
 </body>
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+?>

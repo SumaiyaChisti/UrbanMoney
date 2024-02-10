@@ -1,7 +1,9 @@
 <?php
+session_start();
+if (isset($_SESSION['Manager'])) {
 include("components/conn.php");
 
-session_start();
+
 $sno=0;
 if(isset($_POST['id'])){
 
@@ -55,4 +57,12 @@ if(isset($_POST['id1'])){
     }
         
             
+?>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
 ?>

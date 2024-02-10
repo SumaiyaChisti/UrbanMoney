@@ -2,6 +2,7 @@
 <?php
 include("components/conn.php");
 session_start();
+if (isset($_SESSION['Area_Sales_Manager'])) {
 // if(isset($_POST['submit'])) {
   
 //     $q = "INSERT INTO `umutility`(`name`)VALUES ('$_POST[name]')";
@@ -160,3 +161,11 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

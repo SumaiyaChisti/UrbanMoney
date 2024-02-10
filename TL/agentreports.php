@@ -1,8 +1,10 @@
 
 <?php
-include("components/conn.php");
 
 session_start();
+if (isset($_SESSION['Team_Leader'])) {
+include("components/conn.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -154,3 +156,10 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+?>

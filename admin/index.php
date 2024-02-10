@@ -1,6 +1,10 @@
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
+
+
 $d=$conn->query("SELECT * FROM `leads`");
   $num=mysqli_num_rows($d);
 
@@ -378,3 +382,10 @@ $d=$conn->query("SELECT * FROM `leads`");
   <script> var table = new DataTable("table")</script>
 </body>
 </html> 
+<?php
+
+   }
+   else
+   header("location:login.php");
+
+?>

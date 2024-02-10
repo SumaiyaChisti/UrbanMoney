@@ -71,6 +71,8 @@
 <div class="container">
     <div class="main-body">
     <?php
+     session_start();
+    if (isset($_SESSION['Zonal_Sales_Manager'])) {
     include("./components/conn.php");
     $d=$conn->query("SELECT * FROM `form4` WHERE `id`='$_GET[id]'");
     $r=mysqli_fetch_assoc($d);
@@ -92,102 +94,83 @@
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
+                      <br>
                       <h4><?php echo $r['name'];?></h4>
+                      <br>
 
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card mt-3">
+                <h5 style="text-align: center; padding-top: 2rem; " >Documents</h5>
+                <hr>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                   <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 50px; " >Pan Card</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 30px; padding-left: 35px; " >Aadhaar Card</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download" ></i></a>
-                      </div>
-                   </div>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                    <h6 class="mb-0"></path></svg>Pan Card Of Company And All Directors</h6>
+                    
+                     <span><a target="_blank" class="btn" href="../agent/<?php echo $r['pan_card']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Aadhar Card of All Directors</h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['aadhaar_card']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Residentail Light Bill And Telephone Bill Of All Directors</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                  <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top:20px; padding-left: 10px; " >Residential light bill & telephone bill </h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['residential_bill']?>"><i class="fa fa-download"  ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 20px; padding-left: 13px; " >Office light bill & telephone bill</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['office_bill']?>"><i class="fa fa-download" ></i></a>
-                      </div>
-                   </div>
-                  </li>
-                  
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 30px; padding-left: 15px; " >Partnership deed</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['MOA_AOA']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 15px; padding-left: 20px; " >Last 12 months GST 3B applicable</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['ITRfinancials_AuditReport']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
-                  </li>
-                  
-                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 2px; padding-top: 2px; " >Last 3 years company ITR Financials with Audit Report(CA ATTESTED)</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['individual_ITR']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 10px; padding-left: 15px; " >Last 3 Years Indiviual ITR of All Partners</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_registration']?>"><i class="fa fa-download"></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Office Light And Telephone Bill Of Latest Month</h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['office_bill']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 5px; " >Last 12 Months Company Banking Of All Accounts As Per Balance Sheet</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['individual_banking']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 5px; padding-left: 20px; " >Last 6 Months Indiviual Banking Of All Partners</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['list_of_directors']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>MOA And AOA</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['MOA_AOA']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style=" padding-left: 5px; " >All OnGoing Loans Sanction Letter And Repayment Track Record </h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['ongoing_loans']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-left: 3px;"  >List Of Partners And Share holding Apptern On Company LetterHead</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['repayment']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Form 32 And Form 20B</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['form32_20B']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                     <div style="display: flex;" >
-                     <div class="card" style="width: 160px; height:120px" >
-                     <h6 style="padding-top: 20px; padding-left: 5px; " >Photographs 3-4 Of Each Partner</h6>
-                     <a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download" ></i></a>
-                    </div>
-                    <div class="card" style="width: 160px; height:120px" >
-                    <h6 style="padding-top: 35px; padding-left: 20px; " >GST Resgistration</h6>
-                    <a target="_blank" class="btn" href="../agent/<?php echo $r['GST_3B']?>"><i class="fa fa-download"  ></i></a>
-                      </div>
-                   </div>
+                  <h6 class="mb-0"></path></svg>Last 3 Years Company ITR Financials With Audit Report</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['ITRfinancials_AuditReport']?>"><i class="fa fa-download"  ></i></a></span>
                   </li>
-
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Last 3 Years Individual ITR Of All Directors </h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['individual_ITR']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                 
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                <h6 class="mb-0"></path></svg>GST Registration</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['GST_registration']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Last 6 Months Individual Banking</h6>
+                   <span><a target="_blank" class="btn" href="../agent/<?php echo $r['individual_banking']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>List Of Directors And Share Holding Pattern On Company LetterHead</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['list_of_directors']?>"><i class="fa fa-download"></i></a></span>
+                  </li>
+                 
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>All Ongoing Loans On Company And Individual Name Sanction Letter</h6>
+                  <span><a target="_blank" class="btn" href="../agent/<?php echo $r['ongoing_loans']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Repayment Track Record Of All Ongoing Loans</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['repayment']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>3-4 Phtographs Of Each Director</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['photographs']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                  <h6 class="mb-0"></path></svg>Last !2 Months GST 3B Applicable</h6>
+                    <span><a target="_blank" class="btn" href="../agent/<?php echo $r['GST_3B']?>"><i class="fa fa-download"  ></i></a></span>
+                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -203,6 +186,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Email</h6>
@@ -212,6 +196,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Gender</h6>
@@ -220,7 +205,7 @@
                     <?php echo $r['gender'];?>
                     </div>
                   </div>
-                  <hr>
+                  <hr><br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Mobile</h6>
@@ -230,6 +215,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Address</h6>
@@ -239,6 +225,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Pan ID</h6>
@@ -248,6 +235,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Property Ownership</h6>
@@ -257,6 +245,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Marital Status</h6>
@@ -266,6 +255,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Place Of Work</h6>
@@ -275,6 +265,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Job Title</h6>
@@ -284,6 +275,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0"> Work Address</h6>
@@ -293,6 +285,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Years Employes</h6>
@@ -302,6 +295,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Monthly Net Income</h6>
@@ -311,6 +305,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Bank Name</h6>
@@ -320,6 +315,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Branch Name</h6>
@@ -329,6 +325,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Account Number</h6>
@@ -338,6 +335,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Account Type</h6>
@@ -347,6 +345,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Purpose Of Loan</h6>
@@ -356,6 +355,7 @@
                     </div>
                   </div>
                   <hr>
+                  <br>
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Requested Loan</h6>
@@ -364,6 +364,9 @@
                     <?php echo $r['requested_loan_amount'];?>
                     </div>
                   </div>
+                  <hr>
+                  <br>
+
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Terms IN</h6>
@@ -372,12 +375,8 @@
                     <?php echo $r['terms_in'];?>
                     </div>
                   </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                    </div>
-                  </div>
+                
+                  
                 </div>
               </div>
 
@@ -392,3 +391,10 @@
     </div>
 </body>
 </html>
+<?php
+    }
+    else
+    header("location:../admin/login.php");
+
+
+?>

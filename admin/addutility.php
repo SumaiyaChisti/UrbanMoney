@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+  if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 if(isset($_POST['submit'])) {
     $q = "INSERT INTO `umutility`(`name`,`link`)VALUES ('$_POST[name]','$_POST[link]')";
     $d = mysqli_query($conn,$q);
@@ -165,3 +167,9 @@ if(isset($_POST['submit'])) {
 </script>
 
 </html>
+<?php
+  }
+  else
+  header("location:login.php");
+
+?>

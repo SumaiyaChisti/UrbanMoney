@@ -1,8 +1,10 @@
 
 <?php
+session_start();
+if (isset($_SESSION['admin'])) {
 include("components/conn.php");
 
-session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -185,3 +187,9 @@ session_start();
 
 
 </html>
+<?php
+}
+else
+header("location:login.php");
+
+?>

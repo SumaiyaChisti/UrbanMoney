@@ -1,5 +1,7 @@
 
 <?php
+session_start();
+if (isset($_SESSION['Area_Sales_Manager'])) {
 include("components/conn.php");
 if(isset($_POST['submit'])) {
   
@@ -7,7 +9,8 @@ if(isset($_POST['submit'])) {
     $d = mysqli_query($conn,$q);
     
 }
-session_start();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -171,3 +174,11 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

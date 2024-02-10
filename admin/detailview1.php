@@ -1,3 +1,7 @@
+<?php 
+session_start();
+if (isset($_SESSION['admin'])) {
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,9 +72,13 @@
   </style>
 </head>
 <body>
+
+
+
 <div class="container">
     <div class="main-body">
     <?php
+    
     include("./components/conn.php");
     $d=$conn->query("SELECT * FROM `form1` WHERE `id`='$_GET[id]'");
     $r=mysqli_fetch_assoc($d);
@@ -412,3 +420,12 @@
     </div>
 </body>
 </html>
+<?php
+      }
+      else
+      {
+      header("location:login.php");
+      }
+
+
+?>

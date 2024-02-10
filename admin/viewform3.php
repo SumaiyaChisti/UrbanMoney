@@ -1,7 +1,9 @@
 
 <?php
-include("components/conn.php");
 session_start();
+if (isset($_SESSION['admin'])) {
+include("components/conn.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -158,3 +160,10 @@ while($data=mysqli_fetch_assoc($d))
 </script>
 
 </html>
+<?php
+}
+else
+
+header("location:login.php");
+
+?>

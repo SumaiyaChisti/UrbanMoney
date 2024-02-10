@@ -1,6 +1,8 @@
 
 <?php
-   session_start();
+session_start();
+if (isset($_SESSION['admin'])) {
+   
 include("components/conn.php");
 include("../vendor/autoload.php");
 
@@ -241,5 +243,11 @@ while($data=mysqli_fetch_assoc($d))
 <script>
     toast.show();
 </script>
+<?php
+}
+else
+header("location:login.php");
+
+?>
 
 </html>

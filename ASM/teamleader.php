@@ -9,6 +9,7 @@ include("components/conn.php");
     
 // }
 session_start();
+if (isset($_SESSION['Area_Sales_Manager'])) {
 ?>
 
 <!DOCTYPE html>
@@ -159,3 +160,11 @@ function copylink(e){
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>

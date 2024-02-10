@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+if (isset($_SESSION['Manager'])) {
+
 include("components/conn.php");
 if(isset($_SESSION['Manager'])){
     $Q="SELECT * FROM `staff` WHERE `email`='$_SESSION[Manager]'";
@@ -191,3 +193,11 @@ if(isset($_POST['submit']))
 </script>
 
 </html>
+<?php
+}
+else
+header("location:../admin/login.php");
+
+
+
+?>
